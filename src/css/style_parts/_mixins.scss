@@ -3,9 +3,9 @@ $breakpoints: (
 	'pc': 'screen and (max-width: 767px)' //一般PC ブレイクポイント
 ) !default;
 
-$primary_color: #f00;
+$primary_color: #ffc0cb;
 
-$font-family: 'Noto Sans JP', sans-serif;
+// $font-family: 'Noto Sans JP', sans-serif;
 
 @mixin mq($breakpoint: pc) {
     @media #{map-get($breakpoints, $breakpoint)} {
