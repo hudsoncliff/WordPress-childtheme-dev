@@ -28,17 +28,20 @@ add_shortcode( 'member-register', function(){
             <?php wp_nonce_field('bs_user_register','nonce'); ?>
             <input type="text" name="user_login" id="user_login" class="input_field" placeholder="ユーザーネーム（半角小文字の英語と数字）" required>
             <input type="email" name="user_email" id="user_email" class="input_field" placeholder="メールアドレス" required>
+            <input type="password" name="user_pass" id="user_pass" class="input_field" placeholder="パスワード" required>
             <input type="text" name="last_name" id="last_name" class="input_field" placeholder="姓" required>
             <input type="text" name="first_name" id="first_name" class="input_field" placeholder="名" required>
-            <p>性別</p>
-            <label>
-                男性
-                <input type="radio" name="user_gender" id="user_gender" value="男性">
-            </label>
-            <label>
-                女性
-                <input type="radio" name="user_gender" id="user_gender" value="女性">
-            </label>
+            <p class="radio-wrap">
+                <span class="radio-text">性別</span>
+                <label class="label-user-gender">
+                    男性
+                    <input type="radio" name="user_gender" id="user_gender" value="男性">
+                </label>
+                <label class="label-user-gender">
+                    女性
+                    <input type="radio" name="user_gender" id="user_gender" value="女性">
+                </label>
+            </p>
             <input type="text" name="user_address" id="user_address" class="input_field" placeholder="住所" required>
             <input type="text" name="user_tel" id="user_tel" class="input_field" placeholder="携帯番号" required>
             <div class="submit">
@@ -70,12 +73,41 @@ add_action( 'wp_ajax_nopriv_bs_user_register', function() {
     }
 
     if( isset( $_POST['user_login'] ) ) $data_list['user_login'] = $_POST['user_login'];
+    if( isset( $_POST['user_email'] ) ) $data_list['user_email'] = $_POST['user_email'];
+    if( isset( $_POST['first_name'] ) ) $data_list['first_name'] = $_POST['first_name'];
+    if( isset( $_POST['last_name'] ) ) $data_list['last_name'] = $_POST['last_name'];
+    if( isset( $_POST['user_gender'] ) ) $data_list['user_gender'] = $_POST['user_gender'];
+    if( isset( $_POST['user_address'] ) ) $data_list['user_address'] = $_POST['user_address'];
+    if( isset( $_POST['user_tel'] ) ) $data_list['user_tel'] = $_POST['user_tel'];
+    if( isset( $_POST['user_pass'] ) ) $data_list['user_pass'] = $_POST['user_pass'];
 
-    $json_response = [
-        'status' => 'success',
-        'message' => 'ユーザー登録処理',
-        'data_list' => $data_list,
-    ];
+    foreach( $data_list as $key => $data ) {
+
+        $user_data[$key] = $data;
+
+    }
+    $user_data['role'] = 'inactive';
+
+    if( is_wp_error( $insert_user = wp_insert_user( $user_data ) ) ) {
+
+        $json_response = [
+            'status' => 'failure',
+            'message' => $insert_user->get_error_message(),
+            'data_list' => $data_list,
+            'user_data' => $user_data,
+        ];
+
+    } else {
+
+        $json_response = [
+            'status' => 'success',
+            'message' => 'ユーザー登録が完了しました',
+            'data_list' => $data_list,
+            'user_data' => $user_data,
+        ];
+
+    }
+
 
     wp_send_json( $json_response );
 
