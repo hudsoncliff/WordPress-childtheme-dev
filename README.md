@@ -1,10 +1,9 @@
-# wordpress-themedev
-boilerplate for wordpress theme development
+# WordPress-childtheme-dev
+boilerplate for wordpress child theme development
 
 # Directory Structure
 ```
-├─themes/your-theme		# theme root     
-├─ index.php
+├─themes/your-child-theme		# theme root   
 ├─ functions.php
 ├─ style.css
 ├─ assets				# compiled files
@@ -18,7 +17,12 @@ boilerplate for wordpress theme development
 ├─.gitignore
 ```
 
-# Gulp
+# Start Developing
+
+install node files
+```
+npm install
+```
 
 start developing with
 ```

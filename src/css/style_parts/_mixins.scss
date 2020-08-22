@@ -5,8 +5,6 @@ $breakpoints: (
 
 $primary_color: #ffc0cb;
 
-// $font-family: 'Noto Sans JP', sans-serif;
-
 @mixin mq($breakpoint: pc) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
