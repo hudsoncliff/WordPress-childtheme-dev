@@ -3,8 +3,6 @@ $breakpoints: (
 	'pc': 'screen and (max-width: 767px)' //一般PC ブレイクポイント
 ) !default;
 
-$primary_color: #ffc0cb;
-
 @mixin mq($breakpoint: pc) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;

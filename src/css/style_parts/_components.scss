@@ -1,10 +1,19 @@
 body{
     background-color: #f0f0f0;
-    color: $primary_color;
+    color: var(--wp--preset--color--textblack);
 }
 
-.reason-number {
-	font-size: 2rem;
-	font-family: var(--wp--preset--font-family--yu-mincho);
-	margin: 0;
+.reason-step {
+	.reason-number {
+		font-size: 3.6rem;
+		font-family: var(--wp--preset--font-family--yu-mincho);
+		margin: 0;
+		line-height: 3.6rem;
+	}
+	h3 {
+		margin: 0;
+	}
+	.reason-step-text {
+		background-color: var(--wp--preset--color--secondary);
+	}
 }
