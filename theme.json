@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", sans-serif",
+          "name": "Yu Gothic",
+          "slug": "yu-gothic"
+        },
+        {
+          "fontFamily": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Hiragino Mincho Pro\", serif",
+          "name": "Yu Mincho",
+          "slug": "yu-mincho"
+        }
+      ]
+    }
+  }
+}
