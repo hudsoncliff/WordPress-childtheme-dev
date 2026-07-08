@@ -4,6 +4,8 @@
 
 style.css
 
+scripts/sync-dev-changes.env
+
 package-lock.json
 
 *.DS_Store
