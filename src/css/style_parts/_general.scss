@@ -1,0 +1,20 @@
+.ph-1_5em {
+	padding-left: 1.5em !important;
+	padding-right: 1.5em !important;
+}
+
+.sp-ph-1em {
+	@include mq() {
+		padding-left: 1em !important;
+		padding-right: 1em !important;
+	}
+}
+
+br {
+	.pc-hide {
+		display: none;
+		@include mq() {
+			display: inline;
+		}
+	}
+}
