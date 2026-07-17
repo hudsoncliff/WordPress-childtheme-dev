@@ -1,0 +1,9 @@
+.c-pageTitle {
+	font-family: var(--wp--preset--font-family--yu-mincho);
+	font-size: 2rem;
+	text-align: center;
+	padding: 40px 0;
+	@include mq() {
+		padding: 20px 0;
+	}
+}
