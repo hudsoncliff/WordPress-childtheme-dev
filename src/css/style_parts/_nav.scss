@@ -1,0 +1,30 @@
+.menu-item {
+	&.btn-primary {
+		& > a {
+			background-color: var(--wp--preset--color--primary);
+			color: var(--wp--preset--color--secondary);
+			border: 1px solid var(--wp--preset--color--primary);
+			padding-left: 24px;
+			padding-right: 24px;
+			border-radius: 25px;
+			height: 48px;
+			top: 50%;
+			transform: translateY(-50%);
+			@include transition;
+			@include mq() {
+				top: 12px;
+				transform: none;
+				line-height: 1.75;
+			}
+		}
+		&:hover {
+			& > a {
+				background-color: transparent;
+				color: var(--wp--preset--color--primary);
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}
