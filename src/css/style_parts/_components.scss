@@ -140,3 +140,22 @@ body{
 		}
 	}
 }
+
+.main-visual {
+	.swell-block-columns__inner {
+		position: relative;
+	}
+	@include mq(pc-up) {
+		.swell-block-column {
+			&:first-of-type {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			&:last-of-type {
+				margin-left: auto;
+			}
+		}
+	}
+}
