@@ -37,6 +37,11 @@
           "color": "#3A382F",
           "name": "Text Black",
           "slug": "textblack"
+        },
+        {
+          "color": "#7e8e6a",
+          "name": "オリーブグルーン",
+          "slug": "olivegreen"
         }
       ]
     },
