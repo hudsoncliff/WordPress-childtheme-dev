@@ -16,7 +16,7 @@ body {
 }
 
 br {
-	.pc-hide,.sp {
+	&.pc-hide,&.sp {
 		display: none;
 		@include mq() {
 			display: inline;
@@ -34,4 +34,8 @@ br {
 	@include mq() {
 		display: none !important;
 	}
+}
+
+.gap-md {
+	gap: 24px;
 }
